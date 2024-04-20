@@ -1,0 +1,155 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle, #010758, #591175);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  opacity: 0;
+  position: relative;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-top: -50px;
+  margin-bottom: 50px;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  top: 0;
+  width: fit-content;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+textarea {
+  width: 600px;
+  height: 300px;
+  background: #39367c;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 20px;
+  border-radius: 10px;
+  resize: none;
+  margin-bottom: 35px;
+}
+
+textarea:focus {
+  box-shadow: 0 0 10px rgba(62, 41, 255, 0.5);
+}
+
+textarea::placeholder {
+  font-size: 18px;
+  color: #ddd;
+}
+
+.selection {
+  width: 600px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+button {
+  color: #fff;
+  border: none;
+  outline: none;
+  background: #f3235b;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 18px;
+  padding: 14px 30px;
+  display: flex;
+  align-items: center;
+}
+
+button:hover{
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0.8;
+  transition: ease 0.35s;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button img {
+  width: 18px;
+  margin-right: 10px;
+}
+
+select {
+  flex: 1;
+  height: 50px;
+  padding: 0 20px;
+  outline: none;
+  border: none;
+  color: #fff;
+  border-radius: 20px;
+  appearance: none;
+  background: #39367c url("/img/dropdown.png") no-repeat calc(100% - 20px) 20px;
+  background-size: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select:hover {
+  background-color: #554f99;
+  cursor: pointer;
+  transition: all 0.4s;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+select:focus {
+  background-color: #554f99;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+@media only screen and (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem; 
+  }
+  .hero {
+    overflow: hidden;
+  }
+  .selection,
+  textarea {
+    width: 90%; 
+    max-width: 300px; 
+  }
+
+  .selection {
+    flex-direction: column; 
+  }
+  button {
+    margin-top: 10px; 
+  }
+
+  select {
+    width: 300px;
+    line-height: 50px;
+    max-width: 100%;
+  }
+}
